@@ -1,0 +1,69 @@
+object {
+  display: none;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background-color: #009688;
+}
+
+.loader-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #536DFE;
+  width: 100%;
+  height: 100%;
+  transition: 1s opacity;
+  z-index: 9999;
+  opacity: 1;
+}
+
+.loaded .loader-wrapper {
+  opacity: 0;
+    position: absolute;
+}
+
+.loader {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 6em;
+  font-family: 'Ubuntu', sans-serif;
+  opacity: 1;
+  border-radius: 50%;
+}
+.loader .blink-wrapper {
+  color: #FFFFFF;
+  font-size: 1.5em;
+  font-family: 'Ubuntu', sans-serif;
+  animation: rot 2s infinite alternate;
+  width: 20px;
+  height: 20px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.loader .blink-wrapper + .blink-wrapper {
+  margin-left: 15px;
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(90deg);
+    border-radius: 0;
+  }
+  50% {
+    transform: rotate(0deg);
+    border-radius: 25%;
+  }
+  100% {
+    transform: rotate(-90deg);
+    border-radius: 50%;
+  }
+}
